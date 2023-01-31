@@ -1,0 +1,50 @@
+{% load static %}
+{% include 'header.php' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<div class="page-wrapper">
+<div class="content">
+<div class="page-header">
+<div class="page-title">
+<h4>Location List</h4>
+<h6>Manage your Locations</h6>
+</div>
+<div class="page-btn">
+<a href="{%url 'addlocation'%}" class="btn btn-added">
+<img src="https://dreamspos.dreamguystech.com/html/template/assets/img/icons/plus.svg" alt="img" class="me-2">Add Locations
+</a>
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<div class="table-responsive">
+<table class="table  ">
+<thead>
+<tr>
+<th>Location ID</th>
+<th>Edit</th>
+</tr>
+</thead>
+{% for lid in loc %}
+<tbody>
+<tr>
+<td>
+{{lid.location_id}}
+</td>
+<td>
+<a class="me-3" href="editlocation/{{lid.id}}">
+<img src="{% static 'img/edit.svg'%}" alt="img">
+</a>
+</td>
+</tr>
+</tbody>
+{% endfor%}
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</html>

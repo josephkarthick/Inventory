@@ -1,0 +1,65 @@
+{% include 'header.php' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<div class="page-wrapper">
+<div class="content">
+<div class="page-header">
+<div class="page-title">
+<h4>Product Add</h4>
+<h6>Create new product</h6>
+<h6>{{msg}}</h6>
+</div>
+</div>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	<div class="card">
+	<div class="card-body">
+	<div class="row">
+	<div class="col-lg-3 col-sm-6 col-12">
+	<div class="form-group">
+	<label>Product Name</label>
+	<input type="text" name="pn" value={{idno.pn}}>
+	</div>
+	</div>
+	<div class="col-lg-3 col-sm-6 col-12">
+	<div class="form-group">
+	<label>Category</label>
+	<select class="select" name="cat">
+	<option>{{idno.cat}}</option>
+	<option>Computers</option>
+	<option>Monitor</option>
+	<option>Keyboard</option>
+	<option>Mouse</option>
+	</select>
+	</div>
+	</div>
+	<div class="col-lg-3 col-sm-6 col-12">
+	<div class="form-group">
+	<label>Brand</label>
+	<select class="select" name="brand">
+	<option>{{idno.brand}}</option>
+	<option>Dell</option>
+	<option>Hp</option>
+	<option>Logitech</option>
+	<option>Lenovo</option>
+	</select>
+	</div>
+	</div>
+	
+	<div class="col-lg-12">
+	<button class="btn btn-submit me-2">Submit</button>
+	<a href="" class="btn btn-cancel">Cancel</a>
+	</div>
+	</div>
+	</div>
+	</div>
+</form>
+</div>
+</div>
+</div>
+
+
+</html>

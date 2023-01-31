@@ -1,0 +1,87 @@
+{% include 'header.php' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<div class="page-wrapper">
+<div class="content">
+<div class="page-header">
+<div class="page-title">
+<h4>Product Add</h4>
+<h6>Create new product</h6>
+<h6>{{msg}}</h6>
+</div>
+</div>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	<div class="card">
+	<div class="card-body">
+	<div class="row">
+	<div class="col-lg-3 col-sm-6 col-12">
+	<div class="form-group">
+	<label>Product ID</label>
+	<input type="text" name="pdid"></input>
+	</div>
+	</div>
+	<div class="col-lg-3 col-sm-6 col-12">
+	<div class="form-group">
+	<label>Location ID</label>
+	<select class="select" name="locid">
+	<option>Choose ID</option>
+	{% for item in locid %}
+	<option>{{item.location_id}}</option>
+	{% endfor %}
+	</select>
+	</div>
+	</div>
+	
+	<div class="col-lg-3 col-sm-6 col-12">
+	<div class="form-group">
+	<label>Movement ID</label>
+	<input type="text" name="mid">
+	</div>
+	</div>
+	<div class="col-lg-3 col-sm-6 col-12">
+	<div class="form-group">
+	<label>From Location</label>
+	<select class="select" name="floc">
+	<option>Choose Location</option>
+	<option>Chennai</option>
+	<option>Bangalore</option>
+	<option>Mumbai</option>
+	<option>Delhi</option>
+	</select>
+	</div>
+	</div>
+	<div class="col-lg-3 col-sm-6 col-12">
+	<div class="form-group">
+	<label>To Location</label>
+	<select class="select" name="tloc">
+	<option>Choose Location</option>
+	<option>Chennai</option>
+	<option>Bangalore</option>
+	<option>Mumbai</option>
+	<option>Delhi</option>
+	</select>
+	</div>
+	</div>
+	<div class="col-lg-3 col-sm-6 col-12">
+	<div class="form-group">
+	<label>Quantity</label>
+	<input type="text" name="qty"></input>
+	</div>
+	</div>
+	
+	<div class="col-lg-12">
+	<button class="btn btn-submit me-2">Submit</button>
+	<a href="{% url 'addproduct'%}" class="btn btn-cancel">Cancel</a>
+	</div>
+	</div>
+	</div>
+	</div>
+</form>
+</div>
+</div>
+</div>
+</html>
